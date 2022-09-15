@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
-import { categories } from '../../config/categories';
 
-export default function Filters({ filter, setCategory }: any) {
+export default function Filters({ filter, categories, setCategory }: any) {
   const ref = useRef<any>();
 
   return (
@@ -14,7 +13,7 @@ export default function Filters({ filter, setCategory }: any) {
           }}
         />
         <div className="filter-item" ref={ref}>
-          {categories.map((e) => (
+          {categories.map((e: any) => (
             <div
               key={e}
               className={e == filter ? 'filter-item__active' : 'filter-item__tag'}
